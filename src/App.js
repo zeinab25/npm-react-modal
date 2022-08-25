@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Modal from "./lib/components/Modal";
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleModal = () => setIsOpen(!isOpen);
+ 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <main>
+        <button className="btn-click" onClick={toggleModal}>
+          CLICK ME
+        </button>
+        {isOpen && (
+          <Modal backdrop canCancel onCancel={toggleModal}>
+            <p>Success! 🥳</p>
+          </Modal>
+        )}
+      </main>
+    </>
   );
 }
 
