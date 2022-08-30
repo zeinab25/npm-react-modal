@@ -1,84 +1,79 @@
 .backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.75);
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+}
 
+.modal {
+  width: 90%;
+  background: white;
+  position: fixed;
+  top: 20vh;
+  left: 5%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal-btn-close,
+.modal-cross-close {
+  position: absolute;
+}
+.modal-btn-close {
+  bottom: 10px;
+  right: 10px;
+}
+
+.modal-cross-close {
+  right: 10px;
+  top: 10px;
+}
+
+.btn {
+  background-color: grey;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.darkTheme {
+  background: rgb(57, 57, 57);
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  color: white;
+  border: solid 2px black;
+}
+
+.darkTheme .btn {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
   .modal {
-    width: 90%;
-    background: white;
-    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26); */
-    position: fixed;
-    top: 20vh;
-    left: 5%;
-    border-radius: 5px;
+    width: 30rem;
+    left: calc((100% - 30rem) / 2);
   }
-  
-    
-  .modal-content {
-    /* padding: 1rem; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* .modal-close {
-    display: flex;
-    justify-content: flex-end;
-    padding: 1rem;
-  } */
-  
-  .modal-cancel, .modal-close{
-    display: flex;
-    /* justify-content: flex-end; */
-    /* padding: 1rem ; */
-  }
-  .modal-cancel{
-    padding: 1rem 1rem  1rem 0 ;
-justify-content: center;
-
-  }
-
-.modal-close{
-  padding: 1rem  1rem 0 0;
-  justify-content: flex-end;
-  }
-
- 
-  
-  .btn{   
-    background-color: grey;
-    color: white;
-    padding: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  .darkTheme{
-    background: rgb(57, 57, 57);
-    /* background-color: grey; */
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;    color: white;
-    border: solid 2px black;
-   
-  }
-
-  .darkTheme .btn{
-    background-color: white;
-    color: black;
-    /* background: rgb(40, 39, 39); */
-
-    padding: 5px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;  }
-  
-  @media (min-width: 768px) {
-    .modal {
-      width: 30rem;
-      left: calc((100% - 30rem) / 2);
-    }
-  }
+}

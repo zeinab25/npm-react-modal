@@ -3,9 +3,9 @@ import "./App.css";
 import Modal from "./lib/components/Modal";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpenModal, setIsOpenModal] = useState(false);
 
-  const toggleModal = () => setIsOpen(!isOpen);
+  const toggleModal = () => setIsOpenModal(!isOpenModal);
  
 
   return (
@@ -14,11 +14,11 @@ function App() {
         <button className="btn-click" onClick={toggleModal}>
           CLICK ME
         </button>
-        {isOpen && (
-          <Modal backdrop canCancel onCancel={toggleModal}>
+
+          <Modal backdrop crossClose darkTheme onClose={toggleModal} isOpen={isOpenModal}>
             <p>Success! 🥳</p>
           </Modal>
-        )}
+      
       </main>
     </>
   );

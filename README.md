@@ -7,14 +7,20 @@ Install using `npm install modal-zb`
 ## Usage
 
 In a React app, use the Modal components:
-import { Modal } from 'modal-zb'
+`import { Modal } from 'modal-zb'`
+
 
 ## Modal props
 
-backdrop : Backdrop option
-darkTheme : Dark theme option
-canCancel : Cancel button option
-onCancel : Cancel button onclick function
+| Name        | Description      
+| ----------- | -----------      
+| backdrop    | Boolean (optional)           
+| darkTheme   | Boolean (optional)             
+| btnClose    | Boolean (optional)           
+| crossClose  | Boolean (optional)             
+| onClose     | function              
+| isOpen      | Boolean          
+
 
 ## Exemple
 
@@ -33,11 +39,11 @@ function App() {
         <button className="btn-click" onClick={toggleModal}>
           CLICK ME
         </button>
-        {isOpen && (
-          <Modal backdrop canCancel onCancel={toggleModal}>
+     
+          <Modal  isOpen={isOpenModal} backdrop crossClose onClose={toggleModal}>
             <p>Success! 🥳</p>
           </Modal>
-        )}
+        
       </main>
     </>
   );

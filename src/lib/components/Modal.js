@@ -4,21 +4,29 @@ import "./Modal.css";
 
 const Modal = (props) => (
   <>
-    {props.backdrop && <div className="backdrop"></div>}
-    <div className= {`modal ${props.darkTheme? 'darkTheme':''}`}>
-    <section className="modal-close">
-      <button className="btn" onClick={props.onCancel}>✖</button></section>
-      <section className="modal-content">{props.children}</section>
+    {props.isOpen && (
+      <>
+        {props.backdrop && <div className="backdrop"></div>}
+        <div className={`modal ${props.darkTheme ? "darkTheme" : ""}`}>
+          {props.crossClose && (
+            <section className="modal-cross-close">
+              <button className="btn" onClick={props.onClose}>
+                ✖
+              </button>
+            </section>
+          )}
+          <section className="modal-content">{props.children}</section>
 
-      {props.canCancel && (
-        <section className="modal-cancel">
-          <button className="btn" onClick={props.onCancel}>
-            Cancel
-          </button>
-        </section>
-      )}
-   
-    </div>
+          {props.btnClose && (
+            <section className="modal-btn-close">
+              <button className="btn" onClick={props.onClose}>
+                Close
+              </button>
+            </section>
+          )}
+        </div>
+      </>
+    )}
   </>
 );
 
