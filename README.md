@@ -2,12 +2,12 @@
 
 ## Install
 
-Install using `npm install modal-zb`
+Install using `npm install react-modal-zeinab`
 
 ## Usage
 
 In a React app, use the Modal components:
-`import { Modal } from 'modal-zb'`
+`import { Modal } from 'react-modal-zeinab'`
 
 
 ## Modal props
@@ -26,7 +26,7 @@ In a React app, use the Modal components:
 
 ```js
 import React, { useState } from "react";
-import { Modal } from "modal-zb";
+import { Modal } from "react-modal-zeinab";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
